@@ -2,7 +2,7 @@ package ejemplo;
 
 import java.util.Scanner;
 
-public class Main {
+public class Tester {
     public static int suma (int x, int y){
         int resultado =x+y;
         return resultado;
