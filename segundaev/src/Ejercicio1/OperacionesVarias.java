@@ -18,8 +18,8 @@ public class OperacionesVarias {
     public static void piramide(){
         Scanner scan=new Scanner(System.in);
         System.out.println("Introduce el tamaño");
-        int tama = scan.nextInt();
-        for (int i = 0; i <tama ; i++) {
+        int tam = scan.nextInt();
+        for (int i = 0; i <tam ; i++) {
             for (int j = 0; j < i; j++) {
                 System.out.print(j + " ");
             }
