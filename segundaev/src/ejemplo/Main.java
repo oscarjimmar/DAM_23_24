@@ -1,3 +1,5 @@
+package ejemplo;
+
 import java.util.Scanner;
 
 public class Main {
@@ -26,6 +28,16 @@ public class Main {
                 break;
             case 2:
                 resta();
+                break;
+            case 3:
+                num1= scan.nextInt();
+                num2= scan.nextInt();
+                System.out.println(calculadora.multiplicar(num1,num2));
+                break;
+            case 4:
+                num1= scan.nextInt();
+                num2= scan.nextInt();
+                System.out.println(calculadora.dividir(num1,num2));
                 break;
         }
     }
