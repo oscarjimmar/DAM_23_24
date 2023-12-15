@@ -29,15 +29,14 @@ public class Tester {
                     System.out.println(OperacionesString.concatenacion(str1,str2));
                     break;
                 case '3':
+                    System.out.println("Introduce una frase");
+                    OperacionesString.contadorP();
                     break;
                 case '4':
-                    System.out.println("Introduce una frase.");
-                    String frase= scan.nextLine();
-                    System.out.println("Introduce la palabra que  quieres ver cuanto se repite en la frase");
-                    String [] serie=frase.split(" ");
-
-                    String repeticion;
-
+                    OperacionesString.contadorRepetida();
+                    break;
+                case '0':
+                    System.out.println("Saliendo");
                     break;
                 default:
                     System.out.println("opcion no valida");
