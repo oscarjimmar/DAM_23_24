@@ -1,4 +1,4 @@
-package ejemplo;
+package ejemploModular;
 
 import java.util.Scanner;
 

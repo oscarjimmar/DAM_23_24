@@ -1,4 +1,4 @@
-package ejemplo;
+package ejemploModular;
 
 public class calculadora {
     public static int multiplicar (int x, int y){
