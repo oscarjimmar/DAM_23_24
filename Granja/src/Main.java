@@ -13,5 +13,8 @@ public class Main {
         System.out.println(gallina.toString());
         System.out.println(gallina1.toString());
         System.out.println(random.toString());
+
+        System.out.println("un año");
+        random.setEdad(random.getEdad()+1);
     }
 }
