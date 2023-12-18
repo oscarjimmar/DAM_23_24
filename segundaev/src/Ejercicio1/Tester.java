@@ -18,6 +18,8 @@ public class Tester {
                 case 2:
                     OperacionesVarias.piramide();
                     break;
+                case 0:
+                    System.out.println("Saliendo");
                 default:
                     System.out.println("opcion no valida");
             }

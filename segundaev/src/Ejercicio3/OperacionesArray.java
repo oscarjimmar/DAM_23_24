@@ -14,7 +14,5 @@ public class OperacionesArray {
         System.out.println();
         return x;
     }
-    public static int[] OrdenarArray(int[] x){
 
-    }
 }
