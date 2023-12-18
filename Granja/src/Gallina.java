@@ -9,6 +9,8 @@ public class Gallina {
     }
     public Gallina(){
         nombre =getNombreAleatorio();
+        peso= (float) (Math.random()*3+1);
+        edad= (int) (Math.random()*9+1);
     }
     public Gallina(String nombre,int edad, float peso){
         this.nombre=nombre;
