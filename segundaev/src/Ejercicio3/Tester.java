@@ -26,10 +26,10 @@ public class Tester {
                     System.out.println(OperacionesArray.Media(serie));
                     break;
                 case 5:
+                    OperacionesArray.InvertirArray(serie);
                     break;
                 case 6:
-                    OperacionesArray.ComprobarNum(serie,comprobar);
-                    if (comprobar==true)
+                    if (OperacionesArray.ComprobarNum(serie)==true)
                         System.out.println("El número está");
                     else
                         System.out.println("El número no está");

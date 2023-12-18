@@ -32,8 +32,16 @@ public class OperacionesArray {
         }
         return total/x.length;
     }
-    public static boolean ComprobarNum(int[] x,boolean y){
-        y=false;
+    public static int[] InvertirArray(int[] x){
+
+        for(int i=x.length-1;i>=0;i--) {
+            System.out.print(x[i] + "  ");
+        }
+        System.out.println();
+        return x;
+    }
+    public static boolean ComprobarNum(int[] x){
+        boolean y = false;
         Scanner scan=new Scanner(System.in);
         System.out.println("Introduce un numero para comprobar si esta");
         int num =scan.nextInt();
