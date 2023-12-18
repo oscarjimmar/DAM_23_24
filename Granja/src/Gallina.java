@@ -23,7 +23,22 @@ public class Gallina {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public void mostrarInfo(){
+    /*public void mostrarInfo(){
         System.out.println("Me llamo "+nombre+" tengo "+edad+" años y peso "+peso+" kg");
+    }*/
+    public String toString(){
+        return String.format("Mellamo %s, este es mi peso %.2f y tengo %d años");
+    }
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
+    public float getPeso() {
+        return peso;
+    }
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+    public int getEdad() {
+        return edad;
     }
 }

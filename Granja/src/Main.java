@@ -10,8 +10,8 @@ public class Main {
         Gallina random =new Gallina();
         Gallina gallina=new Gallina();
         Gallina gallina1=new Gallina(name,edad,peso);
-        gallina.mostrarInfo();
-        gallina1.mostrarInfo();
-        random.mostrarInfo();
+        System.out.println(gallina.toString());
+        System.out.println(gallina1.toString());
+        System.out.println(random.toString());
     }
 }
