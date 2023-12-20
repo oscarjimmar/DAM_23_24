@@ -5,11 +5,11 @@ public class Gallina {
     private int edad;
     private float peso;
     private int[]huevosSemana ;
-
     private static final String [] nombres={"Paco","Maksim","Quien","Goku","MartyMcfly"};
     public static String getNombreAleatorio(){
         return nombres[(int) (Math.random()* nombres.length)];
     }
+    //constructor
     public Gallina(){
         nombre =getNombreAleatorio();
         peso= (float) (Math.random()*3+1);
@@ -25,16 +25,20 @@ public class Gallina {
         this.peso=peso;
         huevosSemana=new int[7];
     }
+
     public void huevosDia(int dia, int huevos){
         huevosSemana[dia-1]=huevos;
     }
 
+
+    //ver datos
     /*public void mostrarInfo(){
         System.out.println("Me llamo "+nombre+" tengo "+edad+" años y peso "+peso+" kg");
     }*/
     public String toString(){
-        return String.format("Mellamo %s, este es mi peso %.2f y tengo %d años y pongo a la semana \n %s",nombre,peso,edad, Arrays.toString(huevosSemana));
+        return String.format("Me llamo %s, este es mi peso %.2f y tengo %d años y pongo a la semana \n %s",nombre,peso,edad, Arrays.toString(huevosSemana));
     }
+    //geter y seter
     public String getNombre() {
         return nombre;
     }
