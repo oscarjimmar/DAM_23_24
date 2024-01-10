@@ -1,6 +1,6 @@
 public class Punto {
     private double x;
-    private  double y;
+    private double y;
 
      public Punto(double x,double y){
          this.x=x;
@@ -11,10 +11,11 @@ public class Punto {
          y=Math.random()*10-5;
     }
 
-    public double calcularDistancia(Punto punto){
-        double distanciax=punto.getX()-x;
-        double distanciay=punto.getX()-y;
+    public double calcularDistancia(Punto distpunto){
+        double distanciax=distpunto.getX()-x;
+        double distanciay=distpunto.getX()-y;
         return Math.sqrt(distanciax-x+distanciay-y);
+        //return Math.sqrt(Math.pow(dispunto.x-x,2)+Math.pow(dispunto.y-y,2));
     }
 
     @Override
