@@ -31,10 +31,10 @@ public class Main {
                     String nombre= scan.nextLine();
                     int edad= scan.nextInt();
                     float peso= scan.nextFloat();
-                    Gallina random =new Gallina();
                     Gallina gallina1=new Gallina(nombre,edad,peso);
                     System.out.println(gallina1.toString());
-                    System.out.println(random.toString());
+                    Gallina random=new Gallina();
+                    System.out.println(random);
                     break;
 
             }
