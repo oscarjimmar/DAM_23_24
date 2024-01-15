@@ -10,6 +10,7 @@ public abstract class Animal {
         nombre =Utilidades.nombres[(int) (Math.random()*Utilidades.nombres.length)];
         peso= (float) (Math.random()*3+1);
         edad= (int) (Math.random()*100+1);
+        //this("paco",3,4);
     }
 
     public Animal(String nombre, int edad, float peso) {
