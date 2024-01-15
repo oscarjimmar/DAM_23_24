@@ -7,7 +7,7 @@ public class Oveja extends Animal{
         super();
         lanaSemana=new int[7];
         for (int i = 0; i < lanaSemana.length; i++) {
-            lanaSemana[i]= (int) (Math.random()*3);
+            lanaSemana[i]= (int) (Math.random()*20+1);
         }
     }
 
