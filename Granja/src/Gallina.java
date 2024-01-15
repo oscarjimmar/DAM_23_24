@@ -53,6 +53,6 @@ public class Gallina extends Animal {
         return huevosSemana;
     }
     public String toString(){
-        return super.toString()+ String.format("y pongo \n %s",Arrays.toString(huevosSemana));
+        return super.toString() + String.format("y pongo \n %s",Arrays.toString(huevosSemana));
     }
 }

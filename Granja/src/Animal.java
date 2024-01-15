@@ -4,7 +4,7 @@ public abstract class Animal {
     protected String nombre;
     protected int edad;
     protected float peso;
-   // protected float pesoMinimo;
+    //protected float pesoMinimo;
     //protected float pesoMaximo;
     public Animal(){
         nombre =Utilidades.nombres[(int) (Math.random()*Utilidades.nombres.length)];
@@ -60,6 +60,6 @@ public abstract class Animal {
         this.pesoMaximo = pesoMaximo;
     }*/
     public String toString(){
-        return String.format("Me llamo %s, este es mi peso %.2f y tengo %d años ",nombre,peso,edad);
+        return this.getClass().getSimpleName()+ String.format("Me llamo %s, este es mi peso %.2f y tengo %d años ",nombre,peso,edad);
     }
 }

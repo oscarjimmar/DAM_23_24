@@ -2,6 +2,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+    /*public static Animal creaAnimal(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("1.Gallina 2.Vaca 3.Cerdo 4.Oveja");
+        int opcion =scan.nextInt();
+        Animal aux=null;
+        return aux;
+    }*/
     public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
         String opcion;
