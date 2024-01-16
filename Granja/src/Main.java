@@ -30,7 +30,7 @@ public class Main {
                             case "3":
                                 break;
                             default:
-                                System.out.println("no es valida");
+                                System.out.println("Esa opcion no es valida");
 
                         }
                     }while(opcion_gallina!="3");
