@@ -13,7 +13,7 @@ public class Vaca extends Animal{
             litrosLeche[i]= (float) (Math.random()*50);
         }
     }
-    public Vaca(String nombre,int edad,float peso,float[] litrosLeche){
+    public Vaca(String nombre,int edad,float peso){
         super(nombre,edad,peso);
         litrosLeche=new float[7];
         for (int i = 0; i < litrosLeche.length; i++) {

@@ -11,7 +11,7 @@ public class Oveja extends Animal{
         }
     }
 
-    public Oveja(String nombre, int edad, float peso, int[] lana) {
+    public Oveja(String nombre, int edad, float peso) {
         super(nombre, edad, peso);
         lanaSemana=new int[7];
         for (int i = 0; i < lanaSemana.length; i++) {

@@ -9,7 +9,7 @@ public class Cerdo extends Animal{
         }
     }
 
-    public Cerdo(String nombre, int edad, float peso, double[] comidaConsume) {
+    public Cerdo(String nombre, int edad, float peso) {
         super(nombre, edad, peso);
         comidaConsume=new double[7];
         for (int i = 0; i < comidaConsume.length; i++) {
