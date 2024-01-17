@@ -18,7 +18,9 @@ public abstract class Animal {
         this.edad = edad;
         this.peso = peso;
     }
-
+    public float Media(){
+        return 0;
+    }
 
     public String getNombre() {
         return nombre;

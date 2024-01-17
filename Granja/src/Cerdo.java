@@ -18,8 +18,15 @@ public class Cerdo extends Animal{
             comidaConsume[i]=(int) (Math.random()*10+1);
         }
     }
+    private double comidaMedia(){
+        double total=0;
+        for (int i = 0; i < comidaConsume.length; i++) {
+            total=comidaConsume[i]+total;
+        }
+        return total/comidaConsume.length;
+    }
     public String toString(){
-        return super.toString()+ String.format("y doy \n %s\n", Arrays.toString(comidaConsume));
+        return super.toString()+ String.format("y doy \n %s\n La media de comida consumida es de: %.2f\n", Arrays.toString(comidaConsume),comidaMedia());
     }
     public double[] getComidaConsume() {
         return comidaConsume;
