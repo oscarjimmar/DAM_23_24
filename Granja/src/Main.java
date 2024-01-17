@@ -17,13 +17,14 @@ public class Main {
             opcion= scan.nextLine();
             switch (opcion){
                 case "1":
+                    System.out.println("1.Gallina con datos aleatorios\n2.Gallina introduciendo datos\n3.Salir");
                     String opcion_gallina;
                     do {
-                        System.out.println("1.Gallina con datos aleatorios\n2.Gallina introduciendo datos\n3.Salir");
                         opcion_gallina=scan.nextLine();
                         switch(opcion_gallina){
                             case "1":
-                                Gallina random =new Gallina();
+                                Gallina gallinaRandom =new Gallina();
+                                System.out.println(gallinaRandom);
                                 break;
                             case "2":
                                 System.out.println("nombre,edad y peso");
@@ -39,7 +40,7 @@ public class Main {
                             default:
                                 System.out.println("Esa opcion no es valida");
                         }
-                    }while(opcion_gallina!="3");
+                    }while(!opcion_gallina.equals("3"));
                     break;
                 case "2":
                     String opcion_Vaca;
@@ -48,7 +49,8 @@ public class Main {
                         opcion_Vaca=scan.nextLine();
                         switch (opcion_Vaca){
                             case "1":
-                                Vaca random =new Vaca();
+                                Vaca vacaRandom =new Vaca();
+                                System.out.println(vacaRandom);
                                 break;
                             case "2":
                                 System.out.println("nombre,edad y peso");
@@ -64,7 +66,7 @@ public class Main {
                             default:
                                 System.out.println("Esa opcion no es valida");
                         }
-                    }while(opcion_Vaca!="3");
+                    }while(!opcion_Vaca.equals("3"));
                     break;
                 case "3":
                     String opcion_Cerdo;
@@ -73,7 +75,8 @@ public class Main {
                         opcion_Cerdo=scan.nextLine();
                         switch (opcion_Cerdo){
                             case "1":
-                                Cerdo random =new Cerdo();
+                                Cerdo cerdoRandom =new Cerdo();
+                                System.out.println(cerdoRandom);
                                 break;
                             case "2":
                                 System.out.println("nombre,edad y peso");
@@ -89,7 +92,7 @@ public class Main {
                             default:
                                 System.out.println("Esa opcion no es valida");
                         }
-                    }while(opcion_Cerdo!="3");
+                    }while(!opcion_Cerdo.equals("3"));
                     break;
                 case "4":
                     String opcion_Oveja;
@@ -98,7 +101,8 @@ public class Main {
                         opcion_Oveja=scan.nextLine();
                         switch (opcion_Oveja){
                             case "1":
-                                Oveja random =new Oveja();
+                                Oveja ovejaRandom =new Oveja();
+                                System.out.println(ovejaRandom);
                                 break;
                             case "2":
                                 System.out.println("nombre,edad y peso");
@@ -114,7 +118,7 @@ public class Main {
                             default:
                                 System.out.println("Esa opcion no es valida");
                         }
-                    }while (opcion_Oveja!="3");
+                    }while (!opcion_Oveja.equals("3"));
                     break;
                 case "5":
                     Granja granja = new Granja();
@@ -126,6 +130,6 @@ public class Main {
                 default:
                     System.out.println("opcion no valida");
             }
-        }while(opcion!="6");
+        }while(!opcion.equals("6"));
     }
 }
