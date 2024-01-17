@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Cerdo extends Animal{
     private double[] comidaConsume;
 
@@ -16,7 +18,9 @@ public class Cerdo extends Animal{
             comidaConsume[i]=(int) (Math.random()*10+1);
         }
     }
-
+    public String toString(){
+        return super.toString()+ String.format("y doy \n %s\n\n", Arrays.toString(comidaConsume));
+    }
     public double[] getComidaConsume() {
         return comidaConsume;
     }

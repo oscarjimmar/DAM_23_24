@@ -21,7 +21,7 @@ public class Vaca extends Animal{
         }
     }
     public String toString(){
-        return super.toString()+ String.format("y doy \n %s", Arrays.toString(litrosLeche));
+        return super.toString()+ String.format("y doy \n %s\n\n", Arrays.toString(litrosLeche));
     }
     public float[] getLitrosLeche() {
         return litrosLeche;

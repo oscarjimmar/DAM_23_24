@@ -27,6 +27,6 @@ public class Oveja extends Animal{
         this.lanaSemana = lana;
     }
     public String toString(){
-        return super.toString()+ String.format("y doy \n %s", Arrays.toString(lanaSemana));
+        return super.toString()+ String.format("y doy \n %s\n\n", Arrays.toString(lanaSemana));
     }
 }
