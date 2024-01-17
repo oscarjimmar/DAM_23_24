@@ -19,7 +19,7 @@ public class Cerdo extends Animal{
         }
     }
     public String toString(){
-        return super.toString()+ String.format("y doy \n %s\n\n", Arrays.toString(comidaConsume));
+        return super.toString()+ String.format("y doy \n %s\n", Arrays.toString(comidaConsume));
     }
     public double[] getComidaConsume() {
         return comidaConsume;
