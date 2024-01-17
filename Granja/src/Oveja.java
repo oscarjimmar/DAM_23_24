@@ -11,12 +11,19 @@ public class Oveja extends Animal{
         }
     }
 
-    public Oveja(String nombre, int edad, float peso, int[] lana) {
+    public Oveja(String nombre, int edad, float peso) {
         super(nombre, edad, peso);
         lanaSemana=new int[7];
         for (int i = 0; i < lanaSemana.length; i++) {
             lanaSemana[i]= (int) (Math.random()*3);
         }
+    }
+    private double mediaLana(){
+        double total=0;
+        for (int i = 0; i < lanaSemana.length; i++) {
+            total=lanaSemana[i]+total;
+        }
+        return total/lanaSemana.length;
     }
 
     public int[] getLanaSemana() {
@@ -27,6 +34,6 @@ public class Oveja extends Animal{
         this.lanaSemana = lana;
     }
     public String toString(){
-        return super.toString()+ String.format("y doy \n %s", Arrays.toString(lanaSemana));
+        return super.toString()+ String.format("y doy \n %s\n La media es de: %.2f\n", Arrays.toString(lanaSemana),mediaLana());
     }
 }

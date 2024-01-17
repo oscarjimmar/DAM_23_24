@@ -13,15 +13,22 @@ public class Vaca extends Animal{
             litrosLeche[i]= (float) (Math.random()*50);
         }
     }
-    public Vaca(String nombre,int edad,float peso,float[] litrosLeche){
+    public Vaca(String nombre,int edad,float peso){
         super(nombre,edad,peso);
         litrosLeche=new float[7];
         for (int i = 0; i < litrosLeche.length; i++) {
             litrosLeche[i]= (int) (Math.random()*3);
         }
     }
+    private double mediaLeche(){
+        double total=0;
+        for (int i = 0; i < litrosLeche.length; i++) {
+            total=litrosLeche[i]+total;
+        }
+        return total/litrosLeche.length;
+    }
     public String toString(){
-        return super.toString()+ String.format("y doy \n %s", Arrays.toString(litrosLeche));
+        return super.toString()+ String.format("y doy \n %s\n La media es de: %.2f\n", Arrays.toString(litrosLeche),mediaLeche());
     }
     public float[] getLitrosLeche() {
         return litrosLeche;

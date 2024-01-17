@@ -18,7 +18,9 @@ public abstract class Animal {
         this.edad = edad;
         this.peso = peso;
     }
-
+    public float Media(){
+        return 0;
+    }
 
     public String getNombre() {
         return nombre;
@@ -60,6 +62,6 @@ public abstract class Animal {
         this.pesoMaximo = pesoMaximo;
     }*/
     public String toString(){
-        return this.getClass().getSimpleName()+ String.format("Me llamo %s, este es mi peso %.2f y tengo %d años ",nombre,peso,edad);
+        return this.getClass().getSimpleName()+ String.format(":\nMe llamo %s, este es mi peso %.2f y tengo %d años ",nombre,peso,edad);
     }
 }
