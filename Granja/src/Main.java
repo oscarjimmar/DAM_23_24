@@ -19,7 +19,7 @@ public class Main {
                 case "1":
                     String opcion_gallina;
                     do {
-                        System.out.println("1.Gallina datos aleatorios\n2.Gallina introduciendo datos\n3.Salir");
+                        System.out.println("1.Gallina con datos aleatorios\n2.Gallina introduciendo datos\n3.Salir");
                         opcion_gallina=scan.nextLine();
                         switch(opcion_gallina){
                             case "1":
