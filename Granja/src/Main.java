@@ -26,7 +26,7 @@ public class Main {
                                 Gallina random =new Gallina();
                                 break;
                             case "2":
-                                System.out.println("nombre,edady peso");
+                                System.out.println("nombre,edad y peso");
                                 String nombre=scan.nextLine();
                                 int edad=scan.nextInt();
                                 float peso= scan.nextFloat();
@@ -41,6 +41,29 @@ public class Main {
                     }while(opcion_gallina!="3");
                     break;
                 case "2":
+
+                    String opcion_Vaca;
+                    do {
+                        System.out.println("1.Vaca datos aleatorios\n2.Gallina introduciendo datos\n3.Salir");
+                        opcion_Vaca=scan.nextLine();
+                        switch (opcion_Vaca){
+                            case "1":
+                                Vaca random =new Vaca();
+                                break;
+                            case "2":
+                                System.out.println("nombre,edad y peso");
+                                String nombre=scan.nextLine();
+                                int edad=scan.nextInt();
+                                float peso= scan.nextFloat();
+                                Gallina gallina1 =new Gallina(nombre,edad,peso);
+                                break;
+                            case "3":
+                                System.out.println("saliendo");
+                                break;
+                            default:
+                                System.out.println("Esa opcion no es valida");
+                        }
+                    }while(opcion_Vaca!="3");
                     break;
             }
         }while(opcion!="5");
