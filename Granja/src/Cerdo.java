@@ -18,6 +18,12 @@ public class Cerdo extends Animal{
             comidaConsume[i]=(int) (Math.random()*10+1);
         }
     }
+
+    @Override
+    public double media() {
+        return 0;
+    }
+
     private double comidaMedia(){
         double total=0;
         for (int i = 0; i < comidaConsume.length; i++) {
