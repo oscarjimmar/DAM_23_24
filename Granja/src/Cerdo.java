@@ -21,10 +21,6 @@ public class Cerdo extends Animal{
 
     @Override
     public double media() {
-        return 0;
-    }
-
-    private double comidaMedia(){
         double total=0;
         for (int i = 0; i < comidaConsume.length; i++) {
             total=comidaConsume[i]+total;
@@ -32,7 +28,7 @@ public class Cerdo extends Animal{
         return total/comidaConsume.length;
     }
     public String toString(){
-        return super.toString()+ String.format("y doy \n %s\n La media de comida consumida es de: %.2f\n", Arrays.toString(comidaConsume),comidaMedia());
+        return super.toString()+ String.format("y doy \n %s\n La media de comida consumida es de: %.2f\n", Arrays.toString(comidaConsume),media());
     }
     public double[] getComidaConsume() {
         return comidaConsume;

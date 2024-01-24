@@ -20,7 +20,9 @@ public class Vaca extends Animal{
             litrosLeche[i]= (int) (Math.random()*3);
         }
     }
-    private double mediaLeche(){
+
+    @Override
+    public double media() {
         double total=0;
         for (int i = 0; i < litrosLeche.length; i++) {
             total=litrosLeche[i]+total;
@@ -28,7 +30,7 @@ public class Vaca extends Animal{
         return total/litrosLeche.length;
     }
     public String toString(){
-        return super.toString()+ String.format("y doy \n %s\n La media es de: %.2f\n", Arrays.toString(litrosLeche),mediaLeche());
+        return super.toString()+ String.format("y doy \n %s\n La media es de: %.2f\n", Arrays.toString(litrosLeche),media());
     }
     public float[] getLitrosLeche() {
         return litrosLeche;
