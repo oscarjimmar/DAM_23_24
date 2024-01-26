@@ -5,6 +5,10 @@ public class CentroSalud {
     private String codigo_postal;
 
     public CentroSalud(){
+        this.identificador=(int)(Math.random()*10+1);
+        this.nombre="alcala";
+        this.domicilio="calle";
+        this.codigo_postal="28017";
 
     }
     public CentroSalud(int identificador, String nombre, String domicilio, String codigo_postal) {

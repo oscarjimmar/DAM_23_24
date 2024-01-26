@@ -5,6 +5,7 @@ public class MedicoCentroSalud extends Medico{
 
     public MedicoCentroSalud() {
         super();
+        this.centro= new CentroSalud();
     }
 
     public MedicoCentroSalud(String nombre, int edad, char sexo, double horas, double salarioHora, CentroSalud centro) {
@@ -15,6 +16,13 @@ public class MedicoCentroSalud extends Medico{
     @Override
     public double CalcularSalario() {
         return getHoras()*getSalarioHora();
+    }
+
+    @Override
+    public String toString() {
+        return "MedicoCentroSalud{" +
+                "centro=" + centro +
+                '}';
     }
 
     public CentroSalud getCentro() {
