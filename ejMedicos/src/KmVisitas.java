@@ -4,7 +4,9 @@ public class KmVisitas {
 
     public KmVisitas() {
         km=new int[31];
+        for (int i = 0; i < km.length; i++) {
 
+        }
     }
 
     public int[] getKm() {
