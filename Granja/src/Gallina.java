@@ -31,17 +31,20 @@ public class Gallina extends Animal {
         }
     }
 
-    public void huevosDia(int dia, int huevos){
-        huevosSemana[dia-1]=huevos;
-    }
-
-    private double mediaHuevos(){
+    @Override
+    public double media() {
         double total=0;
         for (int i = 0; i < huevosSemana.length; i++) {
             total=huevosSemana[i]+total;
         }
         return total/huevosSemana.length;
     }
+
+    public void huevosDia(int dia, int huevos){
+        huevosSemana[dia-1]=huevos;
+    }
+
+
     //ver datos
     /*public void mostrarInfo(){
         System.out.println("Me llamo "+nombre+" tengo "+edad+" años y peso "+peso+" kg");
@@ -58,6 +61,6 @@ public class Gallina extends Animal {
         return huevosSemana;
     }
     public String toString(){
-        return super.toString() + String.format("y pongo \n %s \n la media es de: %.2f \n",Arrays.toString(huevosSemana),mediaHuevos());
+        return super.toString() + String.format("y pongo \n %s \n la media es de: %.2f \n",Arrays.toString(huevosSemana),media());
     }
 }
