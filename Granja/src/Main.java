@@ -17,9 +17,9 @@ public class Main {
             opcion= scan.nextLine();
             switch (opcion){
                 case "1":
-                    System.out.println("1.Gallina con datos aleatorios\n2.Gallina introduciendo datos\n3.Salir");
                     String opcion_gallina;
                     do {
+                        System.out.println("1.Gallina con datos aleatorios\n2.Gallina introduciendo datos\n3.Salir");
                         opcion_gallina=scan.nextLine();
                         switch(opcion_gallina){
                             case "1":
@@ -31,6 +31,7 @@ public class Main {
                                 String nombre=scan.nextLine();
                                 int edad=scan.nextInt();
                                 float peso= scan.nextFloat();
+                                scan.nextLine();
                                 Gallina gallina1 =new Gallina(nombre,edad,peso);
                                 System.out.println(gallina1);
                                 break;
