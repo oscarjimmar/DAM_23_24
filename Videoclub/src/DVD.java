@@ -1,11 +1,11 @@
 public abstract class DVD {
     protected int id;
     protected String titulo;
-    protected int anioSalida;
+    protected String anioSalida;
 
 
-
-    public DVD(int id, String titulo, int anioSalida) {
+    public DVD(){}
+    public DVD(int id, String titulo, String anioSalida) {
         this.id=id;
         this.titulo = titulo;
         this.anioSalida = anioSalida;
@@ -27,11 +27,11 @@ public abstract class DVD {
         this.titulo = titulo;
     }
 
-    public int getAnioSalida() {
+    public String getAnioSalida() {
         return anioSalida;
     }
 
-    public void setAnioSalida(int anioSalida) {
+    public void setAnioSalida(String anioSalida) {
         this.anioSalida = anioSalida;
     }
 
