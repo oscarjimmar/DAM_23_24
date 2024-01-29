@@ -68,7 +68,7 @@ public class Tienda {
         System.out.print("Ingrese el género (para película) o la plataforma (para videojuego): ");
         String tipo = scanner.nextLine();
 
-        System.out.println("En que posicion del array desea introducirlo");
+        System.out.println("En que posicion desea introducirlo");
         int posArray=scanner.nextInt();
 
         for (int i = 0; i < inventario.length; i++) {
@@ -84,7 +84,7 @@ public class Tienda {
 
     public void eliminarDVD(int idEliminar) {
         for (int i = 0; i < inventario.length; i++) {
-            if (inventario[i] != null && inventario[i].getId() == idEliminar) {
+            if (inventario[i].getId() == idEliminar) {
                 inventario[i] = null;
                 break;
             }

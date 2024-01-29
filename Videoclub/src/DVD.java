@@ -27,6 +27,15 @@ public abstract class DVD {
         this.titulo = titulo;
     }
 
+    @Override
+    public String toString() {
+        return "DVD{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", anioSalida='" + anioSalida + '\'' +
+                '}';
+    }
+
     public String getAnioSalida() {
         return anioSalida;
     }

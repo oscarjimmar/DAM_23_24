@@ -31,4 +31,12 @@ public class Pelicula extends DVD {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
+    @Override
+    public String toString() {
+        return "Pelicula{" +
+                "genero='" + genero + '\'' +
+                ", precio=" + precio +
+                '}';
+    }
 }
