@@ -2,13 +2,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Tienda tienda = new Tienda();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Tamaño de inventario");
+        int tam=scanner.nextInt();
+        Tienda tienda = new Tienda(tam);
 
         //tienda.darDeAltaDVD();
         //tienda.darDeAltaDVD();
 
         // Menú de opciones
-        Scanner scanner = new Scanner(System.in);
+
 
         while (true) {
             System.out.println("\n*** Menú de la Tienda ***");
@@ -59,7 +62,6 @@ public class Main {
                     break;
                 case 0:
                     System.out.println("Saliendo del programa. ¡Hasta luego!");
-                    System.exit(0);
                     break;
                 default:
                     System.out.println("Opción no válida. Intente de nuevo.");

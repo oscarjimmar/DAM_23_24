@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Tienda {
     private DVD[] inventario;
 
-    public Tienda() {
+    public Tienda(int tam) {
 
-        inventario = new DVD[10];
+        inventario = new DVD[tam];
 
         Scanner scanner = new Scanner(System.in);
 
@@ -84,7 +84,7 @@ public class Tienda {
 
     public void eliminarDVD(int idEliminar) {
         for (int i = 0; i < inventario.length; i++) {
-            if (inventario[i].getId() == idEliminar) {
+            if (inventario[i] != null && inventario[i].getId() == idEliminar) {
                 inventario[i] = null;
                 break;
             }
@@ -99,7 +99,7 @@ public class Tienda {
         }
     }
 
-    public void modificarAtributoDVD(int idModificar, String nuevoAtributo) {
+    public void modificarAtributoDVD(int idModificar, String precio) {
         for (int i = 0; i < inventario.length; i++) {
             if (inventario[i] != null && inventario[i].getId() == idModificar){
 
