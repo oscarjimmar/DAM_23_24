@@ -52,7 +52,7 @@ public class Main {
                     System.out.print("Ingrese el nuevo dato: ");
                     String nuevoDato = scanner.nextLine();
 
-                    tienda.modificarAtributoDVD(idModificar, nuevoAtributo,nuevoDato);
+                    tienda.modificarAtributoDVD(idModificar, nuevoAtributo);
                     break;
                 case 6:
                     tienda.mostrarNumeroDVDsBluRay();

@@ -99,7 +99,7 @@ public class Tienda {
         }
     }
 
-    public void modificarAtributoDVD(int idModificar, String nuevoAtributo,String nuevoDato) {
+    public void modificarAtributoDVD(int idModificar, String nuevoAtributo) {
         for (int i = 0; i < inventario.length; i++) {
             if (inventario[i] != null && inventario[i].getId() == idModificar){
 
