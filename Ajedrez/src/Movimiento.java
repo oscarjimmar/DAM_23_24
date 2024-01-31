@@ -10,10 +10,16 @@ public class Movimiento {
         this.posFinal = posFinal;
     }
     public boolean esVertical(){
-        return false;
+        boolean valido=false;
+        if (posInicio.getColumna()==posFinal.getColumna() && posInicio.getFila()!=posFinal.getFila())
+            valido=true;
+        return valido;
     }
     public boolean esHorizontal(){
-        return false;
+        boolean valido=false;
+        if (posInicio.getColumna()!=posFinal.getColumna() && posInicio.getFila()==posFinal.getFila())
+            valido=true;
+        return valido;
     }
     public boolean esDiagonal(){
         return false;

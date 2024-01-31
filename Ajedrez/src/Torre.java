@@ -6,6 +6,9 @@ public class Torre extends Pieza{
 
     @Override
     public boolean validoMovimiento(Movimiento mov) {
-        return false;
+        boolean respuesta=false;
+        if (mov.esVertical()||mov.esHorizontal())
+            respuesta=true;
+        return respuesta;
     }
 }
