@@ -19,7 +19,7 @@ public class Tablero {
     }
 
     /**
-     * dawdawdawdaw
+     * dawdawdawdaw dawdaw
      * @param columna columna aijd
      * @param fila fila dawd
      * @return true
