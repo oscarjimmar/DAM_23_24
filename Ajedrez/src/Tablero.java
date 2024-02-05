@@ -4,6 +4,8 @@ public class Tablero {
         tablero[0][0]=new Torre(true);
         tablero[0][7]=new Torre(false);
     }
+
+
     public void pintarTablero(){
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero.length; j++) {
@@ -15,6 +17,13 @@ public class Tablero {
             System.out.println();
         }
     }
+
+    /**
+     * dawdawdawdaw
+     * @param columna columna aijd
+     * @param fila fila dawd
+     * @return true
+     */
     public boolean hayPieza(int columna,int fila){
         if (tablero[columna][fila]==null)
             return true;
@@ -27,5 +36,19 @@ public class Tablero {
             vacio=true;
 
         return vacio;
+    }
+    public boolean hayPiezasEntre(Movimiento mov){
+        boolean vacio=false;
+
+        return false;
+    }
+    public void ponPieza (Pieza figura,int columna,int fila){
+        tablero[columna][fila]=figura;
+    }
+    public void quitaPieza(int columna,int fila){
+        tablero[columna][fila]=null;
+    }
+    public void quitaPieza(Posicion pos){
+        tablero[pos.getColumna()][pos.getFila()]=null;
     }
 }

@@ -3,6 +3,5 @@ public class Main {
         System.out.println("Hello world!");
         Tablero tablero=new Tablero();
         tablero.pintarTablero();
-
     }
 }
