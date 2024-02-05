@@ -49,13 +49,10 @@ public class Main {
                     int idModificar = scanner.nextInt();
                     scanner.nextLine(); // Consumir el salto de línea
 
-                    System.out.println("Que atributo desea cambiar?");
-                    String nuevoAtributo = scanner.nextLine();
-
                     System.out.print("Ingrese el nuevo dato: ");
                     String nuevoDato = scanner.nextLine();
 
-                    tienda.modificarAtributoDVD(idModificar, nuevoAtributo);
+                    tienda.modificarAtriComun(idModificar, nuevoDato);
                     break;
                 case 6:
                     tienda.mostrarNumeroDVDsBluRay();

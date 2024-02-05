@@ -99,13 +99,18 @@ public class Tienda {
         }
     }
 
-    public void modificarAtributoDVD(int idModificar, String precio) {
-        for (int i = 0; i < inventario.length; i++) {
-            if (inventario[i] != null && inventario[i].getId() == idModificar){
-
+    public void modificarAtriComun(int idModificar, String titulo) {
+        boolean salir = false;
+        for (int i = 0; i < inventario.length && salir == false; i++) {
+            if (inventario[i] != null && inventario[i].getId()==idModificar) {
+                System.out.println("Los datos del DVD son los siguientes:");
+                System.out.println(inventario[i].toString());
+                inventario[i].setTitulo(titulo);
+                salir = true;
             }
         }
     }
+
 
     public void mostrarNumeroDVDsBluRay() {
         int peliculasBluRay = 0;
