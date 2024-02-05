@@ -6,6 +6,11 @@ public class Posicion {
 
     }
 
+    /**
+     * constructor de posicion que recibe dos parametros que son enteros fila y columna
+     * @param fila hace referencia a la fila en la que esta la pieza
+     * @param columna hace referencia a la columna en la que esta la pieza
+     */
     public Posicion(int fila, int columna) {
         this.fila = fila;
         this.columna = columna;
