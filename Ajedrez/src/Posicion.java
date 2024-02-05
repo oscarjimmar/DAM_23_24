@@ -2,6 +2,9 @@ public class Posicion {
     private int fila;
     private int columna;
 
+    /**
+     * constructor vacio de la clase posicion
+     */
     public Posicion() {
 
     }

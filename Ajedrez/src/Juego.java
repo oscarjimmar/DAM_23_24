@@ -12,6 +12,13 @@ public class Juego {
 
     public void setTurno(int turno){
     }
+
+    /**
+     * se utiliza para saber de que posicion a que posicion se va a mover una pieza
+     * @param jugada este parametro es lo que introduce el usuario
+     * @param tablero este parametro se utiliza para saber si hay una pieza en esa posicion
+     * @return si se cumplen las condiciones devolvera el movimiento que hara mover a la pieza
+     */
     public  Movimiento jugada(String jugada,Tablero tablero){
         if (jugada.length()==4) {
         int col1 = jugada.toUpperCase().charAt(0) - 65;

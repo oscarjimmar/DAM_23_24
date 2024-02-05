@@ -47,13 +47,17 @@ public class Movimiento {
     }
 
     /**
-     *
-     * @return
+     * Este metodo se utiliza para saber cuantas casillas se mueve horizontalmente
+     * @return devuelve la cantidad de casillas que se ha movido
      */
     public int saltoHorizontal(){
         int saltosHorizontal=posInicio.getColumna()-posFinal.getColumna();
         return saltosHorizontal;
     }
+    /**
+     * Este metodo se utiliza para saber cuantas casillas se mueve verticalmente
+     * @return devuelve la cantidad de casillas que se ha movido
+     */
     public int saltoVertical(){
         int saltosVertical=posInicio.getFila()-posFinal.getFila();
         return saltosVertical;
