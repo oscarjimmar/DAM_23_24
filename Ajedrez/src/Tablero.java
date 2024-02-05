@@ -45,6 +45,9 @@ public class Tablero {
     public void ponPieza (Pieza figura,int columna,int fila){
         tablero[columna][fila]=figura;
     }
+    public void ponPieza (Pieza figura,Posicion pos){
+        tablero[pos.getColumna()][pos.getFila()]=figura;
+    }
     public void quitaPieza(int columna,int fila){
         tablero[columna][fila]=null;
     }
