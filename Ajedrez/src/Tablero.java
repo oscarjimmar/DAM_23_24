@@ -51,4 +51,10 @@ public class Tablero {
     public void quitaPieza(Posicion pos){
         tablero[pos.getColumna()][pos.getFila()]=null;
     }
+    public Pieza DevolverPieza (int columna,int fila){
+        return tablero[columna][fila];
+    }
+    public Pieza DevolverPieza(Posicion pos){
+        return tablero[pos.getColumna()][pos.getFila()];
+    }
 }
