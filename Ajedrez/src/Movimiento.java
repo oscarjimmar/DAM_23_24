@@ -25,9 +25,11 @@ public class Movimiento {
         return false;
     }
     public int saltoHorizontal(){
-        return 0;
+        int saltosHorizontal=posInicio.getColumna()-posFinal.getColumna();
+        return saltosHorizontal;
     }
     public int saltoVertical(){
-        return 0;
+        int saltosVertical=posInicio.getFila()-posFinal.getFila();
+        return saltosVertical;
     }
 }
