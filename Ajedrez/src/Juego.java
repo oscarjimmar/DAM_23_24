@@ -1,13 +1,13 @@
 public class Juego {
 
-    private boolean Turno;
+    private boolean turno;
 
     public Juego(boolean turno) {
-        Turno = turno;
+        turno = turno;
     }
 
     public boolean getTurno() {
-        return Turno;
+        return turno;
     }
 
     public void setTurno(int turno){
