@@ -43,7 +43,10 @@ public class Movimiento {
      * @return valido solo devuelve true en caso de que
      */
     public boolean esDiagonal(){
-        return false;
+        boolean valido=false;
+        if (posInicio.getColumna()!=posFinal.getColumna() && posInicio.getFila()!=posFinal.getFila())
+            valido=true;
+        return valido;
     }
 
     /**

@@ -57,8 +57,13 @@ public class Tablero {
      */
     public boolean hayPiezasEntre(Movimiento mov){
         boolean vacio=false;
+        if (mov.esHorizontal()){
+        }else if (mov.esVertical()){
+
+        }else
 
         return false;
+        return vacio;
     }
 
     /**
@@ -68,7 +73,8 @@ public class Tablero {
      * @param fila hace referencia a la fila a la que se colocara la pieza
      */
     public void ponPieza (Pieza figura,int columna,int fila){
-        tablero[columna][fila]=figura;
+        if (!hayPieza(columna, fila))
+            tablero[columna][fila]=figura;
     }
 
     /**
@@ -77,7 +83,8 @@ public class Tablero {
      * @param pos hace referencia a la posicion a la que ira la pieza
      */
     public void ponPieza (Pieza figura,Posicion pos){
-        tablero[pos.getColumna()][pos.getFila()]=figura;
+        if (!hayPieza(pos))
+            tablero[pos.getColumna()][pos.getFila()]=figura;
     }
 
     /**
@@ -86,7 +93,8 @@ public class Tablero {
      * @param fila hace referencia a la fila de la que se eliminara la pieza
      */
     public void quitaPieza(int columna,int fila){
-        tablero[columna][fila]=null;
+        if (hayPieza(columna,fila))
+            tablero[columna][fila]=null;
     }
 
     /**
@@ -94,7 +102,8 @@ public class Tablero {
      * @param pos hace referencia a la casilla de la que se eliminara la pieza
      */
     public void quitaPieza(Posicion pos){
-        tablero[pos.getColumna()][pos.getFila()]=null;
+        if (hayPieza(pos))
+            tablero[pos.getColumna()][pos.getFila()]=null;
     }
 
     /**
@@ -103,7 +112,7 @@ public class Tablero {
      * @param fila hace referencia a la fila en la que se encuentra la pieza
      * @return devuelve la pieza que se encuentra en esa casilla
      */
-    public Pieza DevolverPieza (int columna,int fila){
+    public Pieza devolverPieza (int columna,int fila){
         return tablero[columna][fila];
     }
 
