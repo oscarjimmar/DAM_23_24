@@ -44,9 +44,8 @@ public class Tablero {
      */
     public boolean hayPieza(Posicion pos){
         boolean vacio=false;
-        if (tablero[pos.getFila()][pos.getColumna()]==null)
+        if (tablero[pos.getColumna()][pos.getFila()]==null)
             vacio=true;
-
         return vacio;
     }
 
@@ -73,7 +72,7 @@ public class Tablero {
      * @param fila hace referencia a la fila a la que se colocara la pieza
      */
     public void ponPieza (Pieza figura,int columna,int fila){
-        if (!hayPieza(columna, fila))
+        if (hayPieza(columna, fila))
             tablero[columna][fila]=figura;
     }
 
@@ -83,7 +82,7 @@ public class Tablero {
      * @param pos hace referencia a la posicion a la que ira la pieza
      */
     public void ponPieza (Pieza figura,Posicion pos){
-        if (!hayPieza(pos))
+        if (hayPieza(pos))
             tablero[pos.getColumna()][pos.getFila()]=figura;
     }
 
@@ -93,7 +92,7 @@ public class Tablero {
      * @param fila hace referencia a la fila de la que se eliminara la pieza
      */
     public void quitaPieza(int columna,int fila){
-        if (hayPieza(columna,fila))
+        if (!hayPieza(columna,fila))
             tablero[columna][fila]=null;
     }
 
@@ -102,7 +101,7 @@ public class Tablero {
      * @param pos hace referencia a la casilla de la que se eliminara la pieza
      */
     public void quitaPieza(Posicion pos){
-        if (hayPieza(pos))
+        if (!hayPieza(pos))
             tablero[pos.getColumna()][pos.getFila()]=null;
     }
 

@@ -65,4 +65,20 @@ public class Movimiento {
         int saltosVertical=posInicio.getFila()-posFinal.getFila();
         return saltosVertical;
     }
+
+    public Posicion getPosInicio() {
+        return posInicio;
+    }
+
+    public void setPosInicio(Posicion posInicio) {
+        this.posInicio = posInicio;
+    }
+
+    public Posicion getPosFinal() {
+        return posFinal;
+    }
+
+    public void setPosFinal(Posicion posFinal) {
+        this.posFinal = posFinal;
+    }
 }
