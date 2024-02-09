@@ -11,17 +11,24 @@ public class Main {
             tablero.pintarTablero();
             System.out.println("jugada");
             String jugadadw = scan.nextLine();
+            Posicion inicio = movi.jugada(jugadadw,tablero).getPosInicio();
+            Posicion fin = movi.jugada(jugadadw,tablero).getPosFinal();
             if (movi.jugada(jugadadw, tablero) != null) {
                 if (!tablero.hayPieza(movi.jugada(jugadadw, tablero).getPosInicio())) {
-                    if (tablero.hayPieza(movi.jugada(jugadadw, tablero).getPosFinal())) {
-                        tablero.ponPieza(tablero.DevolverPieza(movi.jugada(jugadadw, tablero).getPosInicio()), movi.jugada(jugadadw, tablero).getPosFinal());
-                        tablero.quitaPieza(movi.jugada(jugadadw, tablero).getPosInicio());
-                    }
-                }
+                    if (tablero.hayPieza(movi.jugada(jugadadw, tablero).getPosFinal())){
+
+                        tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
+                        tablero.quitaPieza(inicio);
+                    }else if (tablero.DevolverPieza(inicio).getColor()!= tablero.DevolverPieza(movi.jugada(jugadadw,tablero).getPosFinal()).getColor()) {
+                        tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
+                        tablero.quitaPieza(inicio);
+                        }else
+                        System.out.println("movimiento no valido");
+                } else
+                    System.out.println("movimiento no valido");
             } else
                 System.out.println("no valido");
             turno++;
-
         }
     }
 }
