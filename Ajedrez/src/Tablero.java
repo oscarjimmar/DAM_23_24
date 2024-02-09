@@ -6,12 +6,18 @@ public class Tablero {
      */
     public Tablero(){
         /*tablero[0][0]=new Torre(true);
-        tablero[0][7]=new Torre(false);*/
+        tablero[0][7]=new Torre(true);
+        tablero[7][0]=new Torre(false);
+        tablero[7][7]=new Torre(false);*/
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero.length; j++) {
                 if (i==0 && j==0)
                     tablero[i][j]=new Torre(true);
-                if (i==0 && j==1)
+                if (i==0 && j==7)
+                    tablero[i][j]=new Torre(true);
+                if (i==7 && j==0)
+                    tablero[i][j]=new Torre(false);
+                if (i==7 && j==7)
                     tablero[i][j]=new Torre(false);
             }
         }
@@ -90,7 +96,7 @@ public class Tablero {
      * @param pos hace referencia a la posicion a la que ira la pieza
      */
     public void ponPieza (Pieza figura,Posicion pos){
-        if (hayPieza(pos) && figura.color==tablero[pos.getColumna()][pos.getFila()].color) {
+        if (hayPieza(pos) ) {
             tablero[pos.getColumna()][pos.getFila()] = figura;
         }
     }
