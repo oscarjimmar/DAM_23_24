@@ -14,9 +14,12 @@ public class Main {
             if (movi.jugada(jugadadw, tablero) != null) {
                 if (!tablero.hayPieza(movi.jugada(jugadadw, tablero).getPosInicio())) {
                     if (tablero.hayPieza(movi.jugada(jugadadw, tablero).getPosFinal())) {
-                        tablero.ponPieza(tablero.DevolverPieza(movi.jugada(jugadadw, tablero).getPosInicio()), movi.jugada(jugadadw, tablero).getPosFinal());
-                        tablero.quitaPieza(movi.jugada(jugadadw, tablero).getPosInicio());
-                    }
+                        Posicion inicio = movi.jugada(jugadadw,tablero).getPosInicio();
+                        Posicion fin = movi.jugada(jugadadw,tablero).getPosFinal();
+                        tablero.ponPieza(tablero.DevolverPieza(inicio),fin);
+                        tablero.quitaPieza(inicio);
+                    }else
+                        System.out.println("movimiento no valido");
                 } else
                     System.out.println("movimiento no valido");
             } else
