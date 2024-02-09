@@ -5,8 +5,16 @@ public class Tablero {
      * constructor de la clase tablero
      */
     public Tablero(){
-        tablero[0][0]=new Torre(true);
-        tablero[0][7]=new Torre(false);
+        /*tablero[0][0]=new Torre(true);
+        tablero[0][7]=new Torre(false);*/
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero.length; j++) {
+                if (i==0 && j==0)
+                    tablero[i][j]=new Torre(true);
+                if (i==0 && j==1)
+                    tablero[i][j]=new Torre(true);
+            }
+        }
     }
 
     /**

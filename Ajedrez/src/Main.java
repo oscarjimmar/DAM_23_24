@@ -17,7 +17,8 @@ public class Main {
                         tablero.ponPieza(tablero.DevolverPieza(movi.jugada(jugadadw, tablero).getPosInicio()), movi.jugada(jugadadw, tablero).getPosFinal());
                         tablero.quitaPieza(movi.jugada(jugadadw, tablero).getPosInicio());
                     }
-                }
+                } else
+                    System.out.println("movimiento no valido");
             } else
                 System.out.println("no valido");
             turno++;
