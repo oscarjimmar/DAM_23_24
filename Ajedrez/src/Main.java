@@ -21,7 +21,6 @@ public class Main {
             } else
                 System.out.println("no valido");
             turno++;
-
         }
     }
 }
