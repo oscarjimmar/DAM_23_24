@@ -16,7 +16,6 @@ public class Main {
             if (movi.jugada(jugadadw, tablero) != null) {
                 if (!tablero.hayPieza(movi.jugada(jugadadw, tablero).getPosInicio())) {
                     if (tablero.hayPieza(movi.jugada(jugadadw, tablero).getPosFinal())){
-
                         tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
                         tablero.quitaPieza(inicio);
                     }else if (tablero.DevolverPieza(inicio).getColor()!= tablero.DevolverPieza(movi.jugada(jugadadw,tablero).getPosFinal()).getColor()) {
