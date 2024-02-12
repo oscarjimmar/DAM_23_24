@@ -11,14 +11,15 @@ public class Main {
             tablero.pintarTablero();
             System.out.println("jugada");
             String jugadadw = scan.nextLine();
-            Posicion inicio = movi.jugada(jugadadw,tablero).getPosInicio();
-            Posicion fin = movi.jugada(jugadadw,tablero).getPosFinal();
             if (movi.jugada(jugadadw, tablero) != null) {
-                if (!tablero.hayPieza(movi.jugada(jugadadw, tablero).getPosInicio())) {
-                    if (tablero.hayPieza(movi.jugada(jugadadw, tablero).getPosFinal())){
+                Posicion inicio = movi.jugada(jugadadw,tablero).getPosInicio();
+                Posicion fin = movi.jugada(jugadadw,tablero).getPosFinal();
+                if (!tablero.hayPieza(inicio)) {
+                    if (tablero.hayPieza(fin)){
                         tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
                         tablero.quitaPieza(inicio);
-                    }else if (tablero.DevolverPieza(inicio).getColor()!= tablero.DevolverPieza(movi.jugada(jugadadw,tablero).getPosFinal()).getColor()) {
+                    }else if (tablero.DevolverPieza(inicio).getColor()!= tablero.DevolverPieza(fin).getColor()) {
+                        tablero.quitaPieza(fin);
                         tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
                         tablero.quitaPieza(inicio);
                         }else
