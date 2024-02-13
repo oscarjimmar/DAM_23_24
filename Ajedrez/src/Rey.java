@@ -1,11 +1,26 @@
 public class Rey extends Pieza{
-    public Rey(boolean color) {
+    public Rey(boolean color)  {
         super(color);
+        /*if (color) {
+            String unicodeMessage = "\u265A";
+            PrintStream out = new PrintStream(System.out, true, "UTF8");
+            out.println(unicodeMessage);
+        }*/
+    }
+
+    @Override
+    public String getUnicode() {
+        return color ? "\u2654" : "\u265A";
     }
 
 
     @Override
     public boolean validoMovimiento(Movimiento mov) {
-        return false;
+        boolean respuesta=false;
+        if (mov.esVertical()|| mov.esHorizontal()||mov.esDiagonal()) {
+            if (mov.saltoHorizontal() == 1 || mov.saltoVertical() == 1||mov.saltoHorizontal() == -1 || mov.saltoVertical() == -1)
+                respuesta = true;
+        }
+        return respuesta;
     }
 }

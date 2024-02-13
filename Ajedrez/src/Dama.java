@@ -1,18 +1,18 @@
-public class Torre extends Pieza{
+public class Dama extends Pieza{
 
-    public Torre(boolean color) {
+    public Dama(boolean color) {
         super(color);
     }
 
     @Override
     public String getUnicode() {
-        return color ? "\u2656" : "\u265C";
+        return color ? "\u2655" : "\u265B";
     }
 
     @Override
     public boolean validoMovimiento(Movimiento mov) {
         boolean respuesta=false;
-        if (mov.esVertical()|| mov.esHorizontal())
+        if (mov.esVertical()|| mov.esHorizontal()||mov.esDiagonal())
             respuesta=true;
         return respuesta;
     }

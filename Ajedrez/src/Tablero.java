@@ -1,26 +1,31 @@
+import java.io.UnsupportedEncodingException;
+
 public class Tablero {
     Pieza [][] tablero = new Pieza[8][8];
 
     /**
      * constructor de la clase tablero
      */
-    public Tablero(){
+    public Tablero() throws UnsupportedEncodingException {
+        //piezas negras
         tablero[0][0]=new Torre(true);
+        tablero[0][1]=new Caballo(true);
+        tablero[0][2]=new Alfil(true);
+        tablero[0][3]=new Dama(true);
+        tablero[0][4]=new Rey(true);
+        tablero[0][5]=new Alfil(true);
+        tablero[0][6]=new Caballo(true);
         tablero[0][7]=new Torre(true);
+        //piezas blancas
         tablero[7][0]=new Torre(false);
+        tablero[7][1]=new Caballo(false);
+        tablero[7][2]=new Alfil(false);
+        tablero[7][3]=new Dama(false);
+        tablero[7][4]=new Rey(false);
+        tablero[7][5]=new Alfil(false);
+        tablero[7][6]=new Caballo(false);
         tablero[7][7]=new Torre(false);
-        /*for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero.length; j++) {
-                if (i==0 && j==0)
-                    tablero[i][j]=new Torre(true);
-                if (i==0 && j==7)
-                    tablero[i][j]=new Torre(true);
-                if (i==7 && j==0)
-                    tablero[i][j]=new Torre(false);
-                if (i==7 && j==7)
-                    tablero[i][j]=new Torre(false);
-            }
-        }*/
+
     }
 
     /**
@@ -30,9 +35,9 @@ public class Tablero {
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero.length; j++) {
                 if (tablero[i][j]!=null)
-                    System.out.print(tablero[i][j].getClass().getSimpleName()+" ");
+                    System.out.print(tablero[i][j].getUnicode()+" ");
                 else
-                    System.out.print("*** ");
+                    System.out.print(' ');
             }
             System.out.println();
         }
