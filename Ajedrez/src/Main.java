@@ -18,15 +18,17 @@ public class Main {
                 Pieza aux=tablero.DevolverPieza(inicio);
                 if (aux.validoMovimiento(movi.jugada(jugadadw,tablero))) {
                     if (!tablero.hayPieza(inicio)) {
-                        if (tablero.hayPieza(fin)) {
-                            tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
-                            tablero.quitaPieza(inicio);
-                        } else if (tablero.DevolverPieza(inicio).getColor() != tablero.DevolverPieza(fin).getColor()) {
-                            tablero.quitaPieza(fin);
-                            tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
-                            tablero.quitaPieza(inicio);
-                        } else
-                            System.out.println("movimiento no valido");
+                        if (!tablero.hayPiezasEntre(movi.jugada(jugadadw, tablero))){
+                            if (tablero.hayPieza(fin)) {
+                                tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
+                                tablero.quitaPieza(inicio);
+                            } else if (tablero.DevolverPieza(inicio).getColor() != tablero.DevolverPieza(fin).getColor()) {
+                                tablero.quitaPieza(fin);
+                                tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
+                                tablero.quitaPieza(inicio);
+                            } else
+                                System.out.println("movimiento no valido");
+                        }
                     } else
                         System.out.println("movimiento no valido");
                 }else

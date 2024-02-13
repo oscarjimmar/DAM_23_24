@@ -8,8 +8,8 @@ public class Tablero {
      */
     public Tablero() throws UnsupportedEncodingException {
         //piezas negras
-        tablero[0][0]=new Torre(true);
-        tablero[0][1]=new Caballo(true);
+        tablero[3][0]=new Torre(true);
+        tablero[3][1]=new Caballo(true);
         tablero[0][2]=new Alfil(true);
         tablero[0][3]=new Dama(true);
         tablero[0][4]=new Rey(true);
@@ -74,14 +74,32 @@ public class Tablero {
      * @return si es true devolvera que hay una pieza entre medias si es false devolvera que no hay piezas entre medias
      */
     public boolean hayPiezasEntre(Movimiento mov){
-        boolean vacio=false;
-        if (mov.esHorizontal()){
-        }else if (mov.esVertical()){
+        boolean piezaEntre=false;
 
-        }else
-
-        return false;
-        return vacio;
+        if (mov.getPosInicio().getColumna()<=mov.getPosFinal().getColumna()){
+            if (mov.getPosInicio().getFila()<=mov.getPosFinal().getFila()){
+                for (int i = mov.getPosInicio().getColumna(); i <= mov.getPosFinal().getColumna() && piezaEntre==false; i++) {
+                    for (int j = mov.getPosInicio().getFila(); j <= mov.getPosFinal().getFila() && piezaEntre==false; j++) {
+                        if (!hayPieza(j,i)) {
+                            Posicion posicionPieza = new Posicion(j,i);
+                            if (!posicionPieza.equals(mov.getPosFinal()) &&!posicionPieza.equals(mov.getPosInicio()))
+                                piezaEntre = true;
+                        }
+                    }
+                }
+            }else{
+                for (int i = mov.getPosInicio().getColumna(); i >= mov.getPosFinal().getColumna() && piezaEntre==false; i++) {
+                    for (int j = mov.getPosInicio().getFila(); j >= mov.getPosFinal().getFila() && piezaEntre==false; j++) {
+                        if (!hayPieza(j,i)) {
+                            Posicion posicionPieza = new Posicion(j,i);
+                            if (!posicionPieza.equals(mov.getPosFinal()))
+                                piezaEntre = true;
+                        }
+                    }
+                }
+            }
+        }
+        return piezaEntre;
     }
 
     /**
