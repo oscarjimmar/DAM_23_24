@@ -44,7 +44,7 @@ public class Movimiento {
      */
     public boolean esDiagonal(){
         boolean valido=false;
-        if (posInicio.getColumna()!=posFinal.getColumna() && posInicio.getFila()!=posFinal.getFila())
+        if (Math.abs(posInicio.getColumna()-posFinal.getColumna()) == Math.abs(posInicio.getFila()-posFinal.getFila()))
             valido=true;
         return valido;
     }
