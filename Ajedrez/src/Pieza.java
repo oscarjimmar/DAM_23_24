@@ -28,6 +28,8 @@ public abstract class Pieza {
         return color;
     }
 
+    public abstract String getUnicode() ;
+
     @Override
     public String toString() {
         return "Pieza{" +

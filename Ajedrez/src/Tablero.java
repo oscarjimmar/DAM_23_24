@@ -1,26 +1,31 @@
+import java.io.UnsupportedEncodingException;
+
 public class Tablero {
     Pieza [][] tablero = new Pieza[8][8];
 
     /**
      * constructor de la clase tablero
      */
-    public Tablero(){
-        tablero[0][0]=new Torre(true);
+    public Tablero() throws UnsupportedEncodingException {
+        //piezas negras
+        tablero[3][0]=new Torre(true);
+        tablero[3][1]=new Caballo(true);
+        tablero[0][2]=new Alfil(true);
+        tablero[0][3]=new Dama(true);
+        tablero[0][4]=new Rey(true);
+        tablero[0][5]=new Alfil(true);
+        tablero[0][6]=new Caballo(true);
         tablero[0][7]=new Torre(true);
+        //piezas blancas
         tablero[7][0]=new Torre(false);
+        tablero[7][1]=new Caballo(false);
+        tablero[7][2]=new Alfil(false);
+        tablero[7][3]=new Dama(false);
+        tablero[7][4]=new Rey(false);
+        tablero[7][5]=new Alfil(false);
+        tablero[7][6]=new Caballo(false);
         tablero[7][7]=new Torre(false);
-        /*for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero.length; j++) {
-                if (i==0 && j==0)
-                    tablero[i][j]=new Torre(true);
-                if (i==0 && j==7)
-                    tablero[i][j]=new Torre(true);
-                if (i==7 && j==0)
-                    tablero[i][j]=new Torre(false);
-                if (i==7 && j==7)
-                    tablero[i][j]=new Torre(false);
-            }
-        }*/
+
     }
 
     /**
@@ -30,9 +35,9 @@ public class Tablero {
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero.length; j++) {
                 if (tablero[i][j]!=null)
-                    System.out.print(tablero[i][j].getClass().getSimpleName()+" ");
+                    System.out.print(tablero[i][j].getUnicode()+" ");
                 else
-                    System.out.print("*** ");
+                    System.out.print(' ');
             }
             System.out.println();
         }
@@ -69,14 +74,32 @@ public class Tablero {
      * @return si es true devolvera que hay una pieza entre medias si es false devolvera que no hay piezas entre medias
      */
     public boolean hayPiezasEntre(Movimiento mov){
-        boolean vacio=false;
-        if (mov.esHorizontal()){
-        }else if (mov.esVertical()){
+        boolean piezaEntre=false;
 
-        }else
-
-        return false;
-        return vacio;
+        if (mov.getPosInicio().getColumna()<=mov.getPosFinal().getColumna()){
+            if (mov.getPosInicio().getFila()<=mov.getPosFinal().getFila()){
+                for (int i = mov.getPosInicio().getColumna(); i <= mov.getPosFinal().getColumna() && piezaEntre==false; i++) {
+                    for (int j = mov.getPosInicio().getFila(); j <= mov.getPosFinal().getFila() && piezaEntre==false; j++) {
+                        if (!hayPieza(j,i)) {
+                            Posicion posicionPieza = new Posicion(j,i);
+                            if (!posicionPieza.equals(mov.getPosFinal()) &&!posicionPieza.equals(mov.getPosInicio()))
+                                piezaEntre = true;
+                        }
+                    }
+                }
+            }else{
+                for (int i = mov.getPosInicio().getColumna(); i >= mov.getPosFinal().getColumna() && piezaEntre==false; i++) {
+                    for (int j = mov.getPosInicio().getFila(); j >= mov.getPosFinal().getFila() && piezaEntre==false; j++) {
+                        if (!hayPieza(j,i)) {
+                            Posicion posicionPieza = new Posicion(j,i);
+                            if (!posicionPieza.equals(mov.getPosFinal()))
+                                piezaEntre = true;
+                        }
+                    }
+                }
+            }
+        }
+        return piezaEntre;
     }
 
     /**
