@@ -10,6 +10,12 @@ public class Caballo extends Pieza{
 
     @Override
     public boolean validoMovimiento(Movimiento mov) {
-        return false;
+        boolean valido = false;
+        if (Math.abs(mov.getPosInicio().getColumna()-mov.getPosFinal().getColumna())==2||Math.abs(mov.getPosInicio().getFila()-mov.getPosFinal().getFila())==2){
+            if (Math.abs(mov.getPosInicio().getColumna()-mov.getPosFinal().getColumna())==1||Math.abs(mov.getPosInicio().getFila()-mov.getPosFinal().getFila())==1){
+                   valido=true;
+            }
+        }
+        return valido;
     }
 }
