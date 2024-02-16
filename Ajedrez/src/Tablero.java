@@ -25,6 +25,15 @@ public class Tablero {
         tablero[7][5] = new Alfil(false);
         tablero[7][6] = new Caballo(false);
         tablero[7][7] = new Torre(false);
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero.length; j++) {
+                if (i == 1)
+                    tablero[i][j]=new Peon(true);
+                else if (i == 6)
+                    tablero[i][j]=new Peon(false);
+            }
+
+        }
 
     }
 
@@ -37,7 +46,7 @@ public class Tablero {
                 if (tablero[i][j] != null)
                     System.out.print(tablero[i][j].getUnicode() + " ");
                 else
-                    System.out.print("\u29c9" +" ");
+                    System.out.print("\u29c9" + " ");
             }
             System.out.println();
         }
@@ -80,27 +89,27 @@ public class Tablero {
         boolean piezaEntre = false;
         if (mov.esVertical()) {
             if (mov.getPosInicio().getFila() < mov.getPosFinal().getFila()) {
-                for (int i = mov.getPosInicio().getFila()+1; i < mov.getPosFinal().getFila() && !piezaEntre; i++) {
-                    if (!hayPieza(mov.getPosInicio().getColumna(),i)) {
-                            piezaEntre = true;
+                for (int i = mov.getPosInicio().getFila() + 1; i < mov.getPosFinal().getFila() && !piezaEntre; i++) {
+                    if (!hayPieza(mov.getPosInicio().getColumna(), i)) {
+                        piezaEntre = true;
                     }
                 }
-            }else
-                for (int i = mov.getPosInicio().getFila()-1; i > mov.getPosFinal().getFila() && !piezaEntre; i--) {
-                    if (!hayPieza(mov.getPosInicio().getColumna(),i)) {
+            } else
+                for (int i = mov.getPosInicio().getFila() - 1; i > mov.getPosFinal().getFila() && !piezaEntre; i--) {
+                    if (!hayPieza(mov.getPosInicio().getColumna(), i)) {
                         piezaEntre = true;
                     }
                 }
         } else if (mov.esHorizontal()) {
             if (mov.getPosInicio().getColumna() < mov.getPosFinal().getColumna()) {
-                for (int i = mov.getPosInicio().getColumna()+1; i < mov.getPosFinal().getColumna() && !piezaEntre; i++) {
-                    if (!hayPieza(i,mov.getPosInicio().getFila())) {
-                            piezaEntre = true;
+                for (int i = mov.getPosInicio().getColumna() + 1; i < mov.getPosFinal().getColumna() && !piezaEntre; i++) {
+                    if (!hayPieza(i, mov.getPosInicio().getFila())) {
+                        piezaEntre = true;
                     }
                 }
-            }else
-                for (int i = mov.getPosInicio().getColumna()-1; i > mov.getPosFinal().getColumna() && !piezaEntre; i--) {
-                    if (!hayPieza(i,mov.getPosInicio().getFila())) {
+            } else
+                for (int i = mov.getPosInicio().getColumna() - 1; i > mov.getPosFinal().getColumna() && !piezaEntre; i--) {
+                    if (!hayPieza(i, mov.getPosInicio().getFila())) {
                         piezaEntre = true;
                     }
                 }
