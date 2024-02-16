@@ -1,5 +1,5 @@
 public class Peon extends Pieza{
-    boolean primerMov=true;
+    private boolean primerMov=true;
     public Peon(boolean color) {
         super(color);
     }
@@ -7,15 +7,28 @@ public class Peon extends Pieza{
     @Override
     public boolean validoMovimiento(Movimiento mov) {
         boolean valido=false;
-        if (color){
-            if (mov.esVertical() || mov.esDiagonal())
-                if (primerMov){
-                    if (mov.saltoVertical() == 1 || mov.saltoVertical() == 2) {
-                        valido=true;
+        if (!color){
+            if (mov.esHorizontal()) {
+                if (primerMov) {
+                    if (mov.saltoHorizontal() == 1 || mov.saltoHorizontal() == 2) {
+                        valido = true;
                     }
-                }else {
-
+                } else {
+                    if (mov.saltoHorizontal() == 1)
+                        valido = true;
                 }
+            }
+        }else{
+            if (mov.esHorizontal()) {
+                if (primerMov) {
+                    if (mov.saltoHorizontal() == -1 || mov.saltoHorizontal() == -2) {
+                        valido = true;
+                    }
+                } else {
+                    if (mov.saltoHorizontal() == -1)
+                        valido = true;
+                }
+            }
         }
         return valido;
     }

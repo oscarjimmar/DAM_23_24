@@ -32,7 +32,6 @@ public class Tablero {
                 else if (i == 6)
                     tablero[i][j]=new Peon(false);
             }
-
         }
 
     }
