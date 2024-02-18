@@ -93,12 +93,13 @@ public class Tablero {
                         piezaEntre = true;
                     }
                 }
-            } else
+            } else {
                 for (int i = mov.getPosInicio().getFila() - 1; i > mov.getPosFinal().getFila() && !piezaEntre; i--) {
                     if (!hayPieza(mov.getPosInicio().getColumna(), i)) {
                         piezaEntre = true;
                     }
                 }
+            }
         } else if (mov.esHorizontal()) {
             if (mov.getPosInicio().getColumna() < mov.getPosFinal().getColumna()) {
                 for (int i = mov.getPosInicio().getColumna() + 1; i < mov.getPosFinal().getColumna() && !piezaEntre; i++) {
@@ -106,40 +107,20 @@ public class Tablero {
                         piezaEntre = true;
                     }
                 }
-            } else
+            } else {
                 for (int i = mov.getPosInicio().getColumna() - 1; i > mov.getPosFinal().getColumna() && !piezaEntre; i--) {
                     if (!hayPieza(i, mov.getPosInicio().getFila())) {
                         piezaEntre = true;
                     }
                 }
-        }
-
-        /*if (mov.getPosInicio().getColumna()<=mov.getPosFinal().getColumna()){
-            if (mov.getPosInicio().getFila()<=mov.getPosFinal().getFila()){
-                for (int i = mov.getPosInicio().getColumna(); i <= mov.getPosFinal().getColumna() && !piezaEntre; i++) {
-                    for (int j = mov.getPosInicio().getFila(); j <= mov.getPosFinal().getFila() && !piezaEntre; j++) {
-                        Posicion posAux=new Posicion(j,i);
-                        if (!hayPieza(posAux)) {
-                            //if (posAux!=mov.getPosInicio() && posAux!=mov.getPosFinal()) {
-                                piezaEntre = true;
-                            //}
-                        }
-                    }
-                }
-            }else{
-                for (int i = mov.getPosInicio().getColumna(); i >= mov.getPosFinal().getColumna() && piezaEntre==false; i++) {
-                    for (int j = mov.getPosInicio().getFila(); j >= mov.getPosFinal().getFila() && piezaEntre==false; j++) {
-                        if (!hayPieza(j,i)) {
-                            Posicion posicionPieza = new Posicion(j,i);
-                            if (!posicionPieza.equals(mov.getPosFinal()))
-                                piezaEntre = true;
-                        }
-                    }
-                }
             }
-        }*/
+        }
         return piezaEntre;
     }
+    /*public boolean comerPeon(Movimiento movv,Tablero tablero){
+        boolean comer=false;
+        if (tablero.)
+    }*/
 
     /**
      * metodo que coloca la pieza en la posicion dada
