@@ -8,7 +8,7 @@ public class Main {
         int turno = 0;
         boolean turn = true;
         Juego movi = new Juego(turn);
-        while (turno < 20) {
+        while (turno<20) {
             tablero.pintarTablero();
             System.out.println("jugada");
             String jugadadw = scan.nextLine();
@@ -24,6 +24,7 @@ public class Main {
                                 if (tablero.hayPieza(fin) && !movi.jugada(jugadadw, tablero).esDiagonal()) {
                                     tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
                                     tablero.quitaPieza(inicio);
+
                                 }else if (movi.jugada(jugadadw, tablero).esDiagonal()&& tablero.hayPieza(fin)) {
                                     System.out.println("movimiento no valido");
                                 } else if (tablero.DevolverPieza(inicio).getColor() != tablero.DevolverPieza(fin).getColor() && !tablero.hayPieza(fin) && movi.jugada(jugadadw, tablero).esDiagonal()) {

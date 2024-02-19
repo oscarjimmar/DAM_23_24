@@ -77,13 +77,14 @@ public class Tablero {
             vacio = true;
         return vacio;
     }
-    public Pieza hayPromocion(Movimiento mov){
+    /*public Pieza hayPromocion(Movimiento mov){
         boolean promocion=false;
         if (mov.getPosFinal().equals(tablero[mov.getPosFinal().getColumna()][0]) ){
             Posicion pos=new Posicion(0,mov.getPosFinal().getColumna());
+
         }
-        return new p;
-    }
+        return ;
+    }*/
 
     /**
      * comprueva si hay piezas entre la posicion de la pieza y a la que se va a mover

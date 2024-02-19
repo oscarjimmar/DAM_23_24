@@ -18,11 +18,13 @@ public class Peon extends Pieza {
                 } else {
                     if (mov.saltoHorizontal() == 1) {
                         valido = true;
+                        primerMov = false;
                     }
                 }
             } else if (mov.esDiagonal()) {
                 if (Math.abs(mov.saltoHorizontal()) == 1 || Math.abs(mov.saltoVertical()) == 1) {
                     valido = true;
+                    primerMov = false;
                 }
             }
         }else {
@@ -35,11 +37,13 @@ public class Peon extends Pieza {
                 } else {
                     if (mov.saltoHorizontal() == -1) {
                         valido = true;
+                        primerMov = false;
                     }
                 }
             } else if (mov.esDiagonal()) {
                 if (Math.abs(mov.saltoHorizontal()) == 1 || Math.abs(mov.saltoVertical()) == 1) {
                     valido = true;
+                    primerMov = false;
                 }
             }
         }
