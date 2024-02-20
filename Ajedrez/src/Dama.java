@@ -1,3 +1,4 @@
+
 public class Dama extends Pieza{
 
     public Dama(boolean color) {

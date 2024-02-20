@@ -1,3 +1,4 @@
+
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
@@ -27,6 +28,9 @@ public class Main {
                                         tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
                                         tablero.quitaPieza(inicio);
                                         turn=true;
+                                        if (tablero.hayPromocion(movi.jugada(jugadadw, tablero))){
+                                            System.out.println("promocion");
+                                        }
                                     }else if (movi.jugada(jugadadw, tablero).esDiagonal()&& tablero.hayPieza(fin)) {
                                         System.out.println("movimiento no valido");
                                     } else if (tablero.DevolverPieza(inicio).getColor() != tablero.DevolverPieza(fin).getColor() && !tablero.hayPieza(fin) && movi.jugada(jugadadw, tablero).esDiagonal()) {
@@ -34,6 +38,9 @@ public class Main {
                                         tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
                                         tablero.quitaPieza(inicio);
                                         turn=true;
+                                        if (tablero.hayPromocion(movi.jugada(jugadadw, tablero))){
+                                            System.out.println("promocion");
+                                        }
                                     } else
                                         System.out.println("movimiento no valido");
                                 } else {

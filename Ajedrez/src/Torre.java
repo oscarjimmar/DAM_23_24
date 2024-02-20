@@ -1,3 +1,4 @@
+
 public class Torre extends Pieza{
 
     public Torre(boolean color) {

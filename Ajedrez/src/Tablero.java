@@ -1,4 +1,6 @@
+
 import java.io.UnsupportedEncodingException;
+import java.util.Scanner;
 
 public class Tablero {
     Pieza[][] tablero = new Pieza[8][8];
@@ -8,7 +10,8 @@ public class Tablero {
      */
     public Tablero() throws UnsupportedEncodingException {
         //piezas negras
-        tablero[0][0] = new Torre(true);
+        //tablero[0][0] = new Torre(true);
+        tablero[2][1]=new Peon(false);
         tablero[0][1] = new Caballo(true);
         tablero[0][2] = new Alfil(true);
         tablero[0][3] = new Dama(true);
@@ -77,14 +80,7 @@ public class Tablero {
             vacio = true;
         return vacio;
     }
-    /*public Pieza hayPromocion(Movimiento mov){
-        boolean promocion=false;
-        if (mov.getPosFinal().equals(tablero[mov.getPosFinal().getColumna()][0]) ){
-            Posicion pos=new Posicion(0,mov.getPosFinal().getColumna());
 
-        }
-        return ;
-    }*/
 
     /**
      * comprueva si hay piezas entre la posicion de la pieza y a la que se va a mover
@@ -125,8 +121,24 @@ public class Tablero {
         }
         return piezaEntre;
     }
+    public boolean hayPromocion(Movimiento mov){
+        boolean promocion=false;
+        if (mov.getPosFinal().getColumna()==0){
+            promocion=true;
+        }
+        return promocion;
+    }
+    public void piezaPromocion(Movimiento mov){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Promocionar a :\n1.Torre\n2.Caballo\n3.Alfil\n4.Dama");
+        String piezaProm =scan.nextLine();
+        switch (piezaProm){
+            case "1":
+                if (tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()].getColor()){
 
-
+                }
+        }
+    }
     /**
      * metodo que coloca la pieza en la posicion dada
      *

@@ -1,3 +1,4 @@
+
 public class Movimiento {
     private Posicion posInicio;
     private Posicion posFinal;

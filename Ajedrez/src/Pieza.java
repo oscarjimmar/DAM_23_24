@@ -1,3 +1,4 @@
+
 public abstract class Pieza {
     protected boolean color;
     protected String nombre;
