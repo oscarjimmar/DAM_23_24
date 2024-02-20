@@ -125,10 +125,7 @@ public class Tablero {
         }
         return piezaEntre;
     }
-    /*public boolean comerPeon(Movimiento movv,Tablero tablero){
-        boolean comer=false;
-        if (tablero.)
-    }*/
+
 
     /**
      * metodo que coloca la pieza en la posicion dada

@@ -18,7 +18,7 @@ public class Main {
                     Posicion inicio = movi.jugada(jugadadw, tablero).getPosInicio();
                     Posicion fin = movi.jugada(jugadadw, tablero).getPosFinal();
                     Pieza aux = tablero.DevolverPieza(inicio);
-                    if (aux.validoMovimiento(movi.jugada(jugadadw, tablero))) {
+                    if (aux!=null && aux.validoMovimiento(movi.jugada(jugadadw, tablero))) {
                         if (!tablero.hayPieza(inicio) && !tablero.DevolverPieza(inicio).getColor()) {
                             //if (!tablero.DevolverPieza(inicio).getClass().getSimpleName().equalsIgnoreCase("Peon"))
                             if (!tablero.hayPiezasEntre(movi.jugada(jugadadw, tablero))/*&&!tablero.DevolverPieza(inicio).getClass().getSimpleName().equalsIgnoreCase("Peon")*/) {
@@ -63,7 +63,8 @@ public class Main {
                     } else
                         System.out.println("no valido");
                     turno++;
-                }
+                }else
+                    System.out.println("jugada no valida");
             }else{
                 tablero.pintarTablero();
                 System.out.println("Turno Negras");
@@ -118,7 +119,8 @@ public class Main {
                     } else
                         System.out.println("no valido");
                     turno++;
-                }
+                }else
+                    System.out.println("jugada no valida");
             }
         }
     }
