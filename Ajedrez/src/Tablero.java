@@ -10,8 +10,7 @@ public class Tablero {
      */
     public Tablero() throws UnsupportedEncodingException {
         //piezas negras
-        //tablero[0][0] = new Torre(true);
-        tablero[2][1]=new Peon(false);
+        tablero[0][0] = new Torre(true);
         tablero[0][1] = new Caballo(true);
         tablero[0][2] = new Alfil(true);
         tablero[0][3] = new Dama(true);
