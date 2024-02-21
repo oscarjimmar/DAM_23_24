@@ -174,7 +174,7 @@ public class Tablero {
                 default:
                     System.out.println("opcion no valida");
             }
-        }while(cambio==false);
+        }while(!cambio);
     }
     /**
      * metodo que coloca la pieza en la posicion dada
