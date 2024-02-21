@@ -37,7 +37,6 @@ public class Tablero {
         }
 
     }
-
     /**
      * metodo que pinta el tablero identificando la casilla y colocando el nombre de la pieza que este en ella
      */
@@ -52,7 +51,6 @@ public class Tablero {
             System.out.println();
         }
     }
-
     /**
      * metodo que comprueba si hay alguna pieza en la posicion dada
      *
@@ -66,7 +64,6 @@ public class Tablero {
         else
             return false;
     }
-
     /**
      * metodo que comprueba si hay alguna pieza en la posicion dada
      *
@@ -79,8 +76,6 @@ public class Tablero {
             vacio = true;
         return vacio;
     }
-
-
     /**
      * comprueva si hay piezas entre la posicion de la pieza y a la que se va a mover
      *
