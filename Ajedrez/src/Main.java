@@ -89,6 +89,9 @@ public class Main {
                                         tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
                                         tablero.quitaPieza(inicio);
                                         turn=false;
+                                        if (tablero.hayPromocion(movi.jugada(jugadadw, tablero))){
+                                            tablero.piezaPromocion(movi.jugada(jugadadw, tablero));
+                                        }
                                     }else if (movi.jugada(jugadadw, tablero).esDiagonal()&& tablero.hayPieza(fin)) {
                                         System.out.println("movimiento no valido");
                                     } else if (tablero.DevolverPieza(inicio).getColor() != tablero.DevolverPieza(fin).getColor() && !tablero.hayPieza(fin) && movi.jugada(jugadadw, tablero).esDiagonal()) {
@@ -96,6 +99,9 @@ public class Main {
                                         tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
                                         tablero.quitaPieza(inicio);
                                         turn=false;
+                                        if (tablero.hayPromocion(movi.jugada(jugadadw, tablero))){
+                                            tablero.piezaPromocion(movi.jugada(jugadadw, tablero));
+                                        }
                                     } else
                                         System.out.println("movimiento no valido");
                                 } else {
