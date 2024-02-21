@@ -123,21 +123,59 @@ public class Tablero {
     }
     public boolean hayPromocion(Movimiento mov){
         boolean promocion=false;
-        if (mov.getPosFinal().getColumna()==0){
+        if (mov.getPosFinal().getColumna()==0||mov.getPosFinal().getColumna()==7){
             promocion=true;
         }
         return promocion;
     }
     public void piezaPromocion(Movimiento mov){
         Scanner scan = new Scanner(System.in);
-        System.out.println("Promocionar a :\n1.Torre\n2.Caballo\n3.Alfil\n4.Dama");
-        String piezaProm =scan.nextLine();
-        switch (piezaProm){
-            case "1":
-                if (tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()].getColor()){
-
-                }
-        }
+        boolean cambio=false;
+        int piezaProm;
+        do{
+            System.out.println("Promocionar a :\n1.Torre\n2.Caballo\n3.Alfil\n4.Dama");
+             piezaProm =scan.nextInt();
+            switch (piezaProm) {
+                case 1:
+                    if (!tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()].getColor()) {
+                        tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()] = new Torre(false);
+                        cambio=true;
+                    } else {
+                        tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()] = new Torre(true);
+                        cambio=true;
+                    }
+                    break;
+                case 2:
+                    if (!tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()].getColor()) {
+                        tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()] = new Caballo(false);
+                        cambio=true;
+                    } else {
+                        tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()] = new Caballo(true);
+                        cambio=true;
+                    }
+                    break;
+                case 3:
+                    if (!tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()].getColor()) {
+                        tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()] = new Alfil(false);
+                        cambio=true;
+                    } else {
+                        tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()] = new Alfil(true);
+                        cambio=true;
+                    }
+                    break;
+                case 4:
+                    if (!tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()].getColor()) {
+                        tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()] = new Dama(false);
+                        cambio=true;
+                    } else {
+                        tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()] = new Dama(true);
+                        cambio=true;
+                    }
+                    break;
+                default:
+                    System.out.println("opcion no valida");
+            }
+        }while(cambio==false);
     }
     /**
      * metodo que coloca la pieza en la posicion dada

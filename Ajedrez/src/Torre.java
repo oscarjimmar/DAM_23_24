@@ -1,6 +1,6 @@
 
 public class Torre extends Pieza{
-
+    private boolean primerMov = true;
     public Torre(boolean color) {
         super(color);
     }

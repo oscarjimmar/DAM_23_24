@@ -1,5 +1,6 @@
 
 public abstract class Pieza {
+    protected boolean primerMov = true;
     protected boolean color;
     protected String nombre;
 

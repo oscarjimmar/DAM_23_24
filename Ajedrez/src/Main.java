@@ -29,7 +29,7 @@ public class Main {
                                         tablero.quitaPieza(inicio);
                                         turn=true;
                                         if (tablero.hayPromocion(movi.jugada(jugadadw, tablero))){
-                                            System.out.println("promocion");
+                                            tablero.piezaPromocion(movi.jugada(jugadadw, tablero));
                                         }
                                     }else if (movi.jugada(jugadadw, tablero).esDiagonal()&& tablero.hayPieza(fin)) {
                                         System.out.println("movimiento no valido");
@@ -39,7 +39,7 @@ public class Main {
                                         tablero.quitaPieza(inicio);
                                         turn=true;
                                         if (tablero.hayPromocion(movi.jugada(jugadadw, tablero))){
-                                            System.out.println("promocion");
+                                            tablero.piezaPromocion(movi.jugada(jugadadw, tablero));
                                         }
                                     } else
                                         System.out.println("movimiento no valido");
@@ -83,8 +83,7 @@ public class Main {
                     Pieza aux = tablero.DevolverPieza(inicio);
                     if (aux.validoMovimiento(movi.jugada(jugadadw, tablero))) {
                         if (!tablero.hayPieza(inicio) && tablero.DevolverPieza(inicio).getColor()) {
-                            //if (!tablero.DevolverPieza(inicio).getClass().getSimpleName().equalsIgnoreCase("Peon"))
-                            if (!tablero.hayPiezasEntre(movi.jugada(jugadadw, tablero))/*&&!tablero.DevolverPieza(inicio).getClass().getSimpleName().equalsIgnoreCase("Peon")*/) {
+                            if (!tablero.hayPiezasEntre(movi.jugada(jugadadw, tablero))) {
                                 if (tablero.DevolverPieza(inicio).getClass().getSimpleName().equalsIgnoreCase("Peon")) {
                                     if (tablero.hayPieza(fin) && !movi.jugada(jugadadw, tablero).esDiagonal()) {
                                         tablero.ponPieza(tablero.DevolverPieza(inicio), fin);

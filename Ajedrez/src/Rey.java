@@ -1,12 +1,8 @@
 
 public class Rey extends Pieza {
+    private boolean primerMov = true;
     public Rey(boolean color) {
         super(color);
-        /*if (color) {
-            String unicodeMessage = "\u265A";
-            PrintStream out = new PrintStream(System.out, true, "UTF8");
-            out.println(unicodeMessage);
-        }*/
     }
 
     @Override
@@ -21,6 +17,7 @@ public class Rey extends Pieza {
         if (mov.esVertical() || mov.esHorizontal() || mov.esDiagonal())
             if (Math.abs(mov.saltoHorizontal()) == 1 || Math.abs(mov.saltoVertical()) == 1 ) {
                 respuesta = true;
+                primerMov=false;
             }
         return respuesta;
     }
