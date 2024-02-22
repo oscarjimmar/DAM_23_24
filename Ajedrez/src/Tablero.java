@@ -112,6 +112,69 @@ public class Tablero {
                     }
                 }
             }
+        } else if (mov.esDiagonal()) {
+            int columnaini=mov.getPosInicio().getColumna();
+            int columnafin=mov.getPosFinal().getColumna();
+            int filaini=mov.getPosInicio().getFila();
+            int filafin=mov.getPosFinal().getFila();
+            int aux1=mov.getPosInicio().getColumna();
+            int aux2=mov.getPosInicio().getFila();
+            if (mov.getPosInicio().getColumna()<mov.getPosFinal().getColumna() && mov.getPosInicio().getFila()<mov.getPosFinal().getFila()){
+                aux1++;
+                aux2++;
+                while (aux1>columnaini && aux1<columnafin && aux2>filaini && aux2<filafin){
+                    if (!hayPieza(aux1,aux2)){
+                        piezaEntre=true;
+                        break;
+                    }else {
+                        aux1++;
+                        aux2++;
+                    }
+                }
+                /*for (int i = mov.getPosInicio().getColumna(); i < mov.getPosFinal().getColumna(); i++) {
+                    for (int j = mov.getPosInicio().getFila(); j < mov.getPosFinal().getFila(); j++) {
+                        if (!hayPieza(i,j)){
+                            piezaEntre=true;
+                        }
+                    }
+                }*/
+            } else if (mov.getPosInicio().getColumna()>mov.getPosFinal().getColumna() && mov.getPosInicio().getFila()>mov.getPosFinal().getFila()) {
+                aux1--;
+                aux2--;
+                while (aux1<columnaini && aux1>columnafin && aux2<filaini && aux2>filafin){
+                    if (!hayPieza(aux1,aux2)){
+                        piezaEntre=true;
+                        break;
+                    }else {
+                        aux1--;
+                        aux2--;
+                    }
+                }
+            }else if (mov.getPosInicio().getColumna()<mov.getPosFinal().getColumna() && mov.getPosInicio().getFila()>mov.getPosFinal().getFila()) {
+                aux1++;
+                aux2--;
+                while (aux1>columnaini && aux1<columnafin && aux2<filaini && aux2>filafin){
+                    if (!hayPieza(aux1,aux2)){
+                        piezaEntre=true;
+                        break;
+                    }else {
+                        aux1++;
+                        aux2--;
+                    }
+                }
+            }else if (mov.getPosInicio().getColumna()>mov.getPosFinal().getColumna() && mov.getPosInicio().getFila()<mov.getPosFinal().getFila()) {
+                aux1--;
+                aux2++;
+                while (aux1<columnaini && aux1>columnafin && aux2>filaini && aux2<filafin){
+                    if (!hayPieza(aux1,aux2)){
+                        piezaEntre=true;
+                        break;
+                    }else {
+                        aux1--;
+                        aux2++;
+                    }
+                }
+            }
         }
         return piezaEntre;
     }

@@ -92,7 +92,7 @@ public class Main {
                     Posicion inicio = movi.jugada(jugadadw, tablero).getPosInicio();
                     Posicion fin = movi.jugada(jugadadw, tablero).getPosFinal();
                     Pieza aux = tablero.DevolverPieza(inicio);
-                    if (aux.validoMovimiento(movi.jugada(jugadadw, tablero))) {
+                    if (aux != null && aux.validoMovimiento(movi.jugada(jugadadw, tablero))) {
                         if (!tablero.hayPieza(inicio) && tablero.DevolverPieza(inicio).getColor()) {
                             if (!tablero.hayPiezasEntre(movi.jugada(jugadadw, tablero))) {
                                 if (tablero.DevolverPieza(inicio).getClass().getSimpleName().equalsIgnoreCase("Peon")) {
