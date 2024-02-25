@@ -15,8 +15,10 @@ public class Tablero {
         tablero[0][2] = new Alfil(true);
         tablero[0][3] = new Dama(true);
         tablero[0][4] = new Rey(true);
-        tablero[0][5] = new Alfil(true);
-        tablero[0][6] = new Caballo(true);
+        //tablero[0][5] = new Alfil(true);
+        //tablero[0][6] = new Caballo(true);
+        tablero[3][5] = new Alfil(true);
+        tablero[3][6] = new Caballo(true);
         tablero[0][7] = new Torre(true);
         //piezas blancas
         tablero[7][0] = new Torre(false);
@@ -24,8 +26,10 @@ public class Tablero {
         tablero[7][2] = new Alfil(false);
         tablero[7][3] = new Dama(false);
         tablero[7][4] = new Rey(false);
-        tablero[7][5] = new Alfil(false);
-        tablero[7][6] = new Caballo(false);
+        //tablero[7][5] = new Alfil(false);
+        //tablero[7][6] = new Caballo(false);
+        tablero[5][5] = new Alfil(false);
+        tablero[5][6] = new Caballo(false);
         tablero[7][7] = new Torre(false);
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero.length; j++) {
@@ -234,6 +238,21 @@ public class Tablero {
             }
         }while(!cambio);
     }
+    public boolean Enroque(Movimiento mov){
+        boolean valido=false;
+        if (tablero[mov.getPosInicio().getColumna()][mov.getPosInicio().getFila()].getClass().getSimpleName().equalsIgnoreCase("torre") && tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()].getClass().getSimpleName().equalsIgnoreCase("rey") && tablero[mov.getPosInicio().getColumna()][mov.getPosInicio().getFila()].getColor() == tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()].getColor() ){
+            if (mov.getPosInicio().getColumna()==0 && mov.getPosFinal().getColumna()==0 || mov.getPosInicio().getColumna()==7 && mov.getPosFinal().getColumna()==7){
+                valido=true;
+            }
+        }
+        return valido;
+    }
+    /*public void hacerEnroque(Movimiento mov){
+        if (tablero[mov.getPosInicio().getColumna()][mov.getPosInicio().getFila()].getColor()==tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()].getColor() ){
+            //return new Movimiento(new Posicion(mov.getPosInicio().getFila(),mov.getPosInicio().getColumna()),new Posicion(mov.getPosInicio().getFila(),mov.getPosInicio().getColumna()+1));
+        }
+
+    }*/
     /**
      * metodo que coloca la pieza en la posicion dada
      *
@@ -289,6 +308,7 @@ public class Tablero {
     public Pieza devolverPieza(int columna, int fila) {
         return tablero[columna][fila];
     }
+
 
     /**
      * metodo que devuelve la pieza que se encuentra en una casilla

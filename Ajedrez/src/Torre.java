@@ -3,6 +3,7 @@ public class Torre extends Pieza{
     private boolean primerMov = true;
     public Torre(boolean color) {
         super(color);
+
     }
 
     @Override
@@ -13,8 +14,10 @@ public class Torre extends Pieza{
     @Override
     public boolean validoMovimiento(Movimiento mov) {
         boolean respuesta=false;
-        if (mov.esVertical()|| mov.esHorizontal())
-            respuesta=true;
+        if (mov.esVertical()|| mov.esHorizontal()) {
+            respuesta = true;
+            primerMov = false;
+        }
         return respuesta;
     }
 }

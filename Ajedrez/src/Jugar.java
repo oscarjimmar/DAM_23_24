@@ -118,23 +118,12 @@ public class Jugar {
                                     } else
                                         System.out.println("movimiento no valido");
                                 } else {
-                                    if (tablero.hayPieza(fin)) {
-                                        tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
-                                        tablero.quitaPieza(inicio);
-                                        turn = false;
-                                    } else if (tablero.DevolverPieza(inicio).getColor() != tablero.DevolverPieza(fin).getColor() && !tablero.DevolverPieza(inicio).getClass().getSimpleName().equalsIgnoreCase("Peon")) {
-                                        if (tablero.DevolverPieza(fin).getClass().getSimpleName().equalsIgnoreCase("Rey")) {
-                                            finJuego = true;
-                                        } else {
-                                            tablero.quitaPieza(fin);
+                                    //if (!tablero.Enroque(movi.jugada(jugadadw, tablero))) {
+                                        if (tablero.hayPieza(fin)) {
                                             tablero.ponPieza(tablero.DevolverPieza(inicio), fin);
                                             tablero.quitaPieza(inicio);
                                             turn = false;
-                                        }
-                                    } else
-                                        System.out.println("movimiento no valido");
-                                    /*else if (tablero.DevolverPieza(inicio).getColor() != tablero.DevolverPieza(fin).getColor() && !tablero.hayPieza(fin)) {
-                                        if (movi.jugada(jugadadw, tablero).esDiagonal()) {
+                                        } else if (tablero.DevolverPieza(inicio).getColor() != tablero.DevolverPieza(fin).getColor() && !tablero.DevolverPieza(inicio).getClass().getSimpleName().equalsIgnoreCase("Peon")) {
                                             if (tablero.DevolverPieza(fin).getClass().getSimpleName().equalsIgnoreCase("Rey")) {
                                                 finJuego = true;
                                             } else {
@@ -143,16 +132,23 @@ public class Jugar {
                                                 tablero.quitaPieza(inicio);
                                                 turn = false;
                                             }
-                                        }
+                                        } else
+                                            System.out.println("movimiento no valido");
+                                    /*} else if (tablero.Enroque(movi.jugada(jugadadw, tablero))) {
+                                        //tablero.hacerEnroque(movi.jugada(jugadadw, tablero));
                                     } else
                                         System.out.println("movimiento no valido");*/
+
                                 }
                             } else
                                 System.out.println("movimiento no valido");
-                        } else
+                        } /*else if (tablero.Enroque(movi.jugada(jugadadw, tablero))) {
+                            //tablero.hacerEnroque(movi.jugada(jugadadw, tablero));
+                            tablero.ponPieza(tablero.DevolverPieza(inicio),fin.getColumna()+1, fin.getFila() );
+                        }*/ else
                             System.out.println("no valido");
                     } else
-                        System.out.println("no valido");
+                        System.out.println("movv no valido");
                 } else
                     System.out.println("jugada no valida");
             }
