@@ -247,12 +247,12 @@ public class Tablero {
         }
         return valido;
     }
-    /*public void hacerEnroque(Movimiento mov){
+    public void hacerEnroque(Movimiento mov){
         if (tablero[mov.getPosInicio().getColumna()][mov.getPosInicio().getFila()].getColor()==tablero[mov.getPosFinal().getColumna()][mov.getPosFinal().getFila()].getColor() ){
             //return new Movimiento(new Posicion(mov.getPosInicio().getFila(),mov.getPosInicio().getColumna()),new Posicion(mov.getPosInicio().getFila(),mov.getPosInicio().getColumna()+1));
         }
 
-    }*/
+    }
     /**
      * metodo que coloca la pieza en la posicion dada
      *
